@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+        <div id="app"> 
+          
+            <h1>{{title}}</h1>
+          
+            <input type="text" v-model='nuevaMoto' @keyup.enter='agregarMoto'>
+            <button @click='agregarMoto'>agregrar</button>
+            
+            <ul>
+                <li v-for='garaje of garajes'>
+                    <input type="number" v-model.number='garaje.cantidad'>
+                    {{garaje.nombre}}
+                    <span v-if='garaje.cantidad === 0'>-sin stock</span>     
+                </li>
+            </ul>
+        </div>
+
+
+
+        <script src="pruebas.js"></script>
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+</html>
